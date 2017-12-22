@@ -8,11 +8,12 @@
 	<script type="text/javascript" src="./js/materialize.js"></script>
 </head>
 <body>
-	 <nav>
+	 <nav id="navbar">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+				<li><a href="#" id="search-button"><i class="material-icons">search</i></a></li>
         <li><a href="sass.html">photo</a></li>
         <li><a href="badges.html">vedio</a></li>
         <li><a href="collapsible.html">back</a></li>
@@ -25,13 +26,14 @@
         <li><a href="mobile.html">Mobile</a></li>
       </ul>
     </div>
-    <nav>
+  </nav>
+	<nav id="search-bar" style="display:none">
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
           <input id="search" type="search" required>
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+          <i class="material-icons" id="search-close">close</i>
         </div>
       </form>
     </div>
@@ -101,6 +103,15 @@
   <script type="text/javascript">
   	 $(".button-collapse").sideNav();
   	 $('.carousel.carousel-slider').carousel({fullWidth: true});
+		 $("#search-button").click(function(){
+			    $("#navbar").hide();
+					$("#search-bar").show();
+					$("#search").focus();
+			});
+			$("#search-close").click(function(){
+ 					$("#search-bar").hide();
+					$("#navbar").show();
+ 			});
   </script>
 </body>
 </html>
