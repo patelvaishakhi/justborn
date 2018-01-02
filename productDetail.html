@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/materialize.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="./js/materialize.js"></script>
+	</head>
+	<body>
+		<nav id="navbar">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Logo</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#" id="search-button"><i class="material-icons">search</i></a></li>
+					<li><a href="sass.html">photo</a></li>
+					<li><a href="badges.html">vedio</a></li>
+					<li><a href="collapsible.html">back</a></li>
+					<li><a href="mobile.html">Mobile</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="sass.html">photo</a></li>
+					<li><a href="badges.html">vedio</a></li>
+					<li><a href="collapsible.html">back</a></li>
+					<li><a href="mobile.html">Mobile</a></li>
+				</ul>
+			</div>
+		</nav>
+		<nav id="search-bar" style="display:none">
+			<div class="nav-wrapper">
+				<form>
+					<div class="input-field">
+						<input id="search" type="search" required>
+						<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons" id="search-close">close</i>
+					</div>
+				</form>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h4>Product title</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="carousel">
+					<a class="carousel-item" href="#one!"><img src="./images/1.jpg"></a>
+					<a class="carousel-item" href="#two!"><img src="./images/2.jpg"></a>
+					<a class="carousel-item" href="#three!"><img src="./images/3.jpg"></a>
+					<a class="carousel-item" href="#four!"><img src="./images/4.jpg"></a>
+					<a class="carousel-item" href="#five!"><img src="./images/5.jpg"></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<a class="waves-effect waves-light btn"><i class="material-icons right">add_shopping_cart</i>Add To Cart</a>
+				</div>
+				<div class="col">
+					<a class="waves-effect waves-light btn"><i class="material-icons right">chevron_right</i>Buy Now</a>
+				</div>	
+				<div class="col right">
+					<h5><blockquote>4000 RS.</blockquote></h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<h5>Description</h5>
+					<p class="flow-text" style="text-align: justify; font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam risus sapien, venenatis et posuere ut, pellentesque dignissim est. Donec faucibus nibh a justo vestibulum, id mattis ligula interdum. Aenean aliquam non elit et congue. Fusce non fermentum nisl. Fusce odio odio, dapibus id sodales sed, ultrices sed erat. Aliquam tempus mattis tincidunt. Sed tristique suscipit fermentum. Pellentesque neque dolor, dapibus eget ullamcorper non, pellentesque eget est. Maecenas ac nunc quam.</p>
+				</div>
+			</div>
+		
+		
+		<script type="text/javascript">
+					$(document).ready(function(){
+						$('.carousel').carousel();
+					});
+					$("#search-button").click(function(){
+						$("#navbar").hide();
+						$("#search-bar").show();
+						$("#search").focus();
+					});
+					$("#search-close").click(function(){
+						$("#search-bar").hide();
+						$("#navbar").show();
+					});
+		</script>
+	</body>
+</html>
