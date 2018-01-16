@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="./js/materialize.js"></script>
 	</head>
 	<body>
-		<nav id="navbar">
+	<nav id="navbar">
 			<div class="nav-wrapper">
 				<a href="#!" class="brand-logo">Kidoyy</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -40,59 +40,10 @@
 				</form>
 			</div>
 		</nav>
-		<div class="container">
-			<div class="row">
-				
-				<div class="col m3 s12">
-					<h3>Tshirts</h3>
-					<ul style="margin-left: 30px;">
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-					</ul>
-				</div>
-				<div class="col m3 s12">
-					<h3>toys</h3>
-					<ul style="margin-left: 30px;">
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-					</ul>
-				</div>
-				<div class="col m3 s12">
-					<h3>Shirts</h3>
-					<ul style="margin-left: 30px;">
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-					</ul>
-				</div>
-				<div class="col m3 s12">
-					<h3>shoes</h3>
-					<ul style="margin-left: 30px;">
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-						<li><a href="">cat1</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-	<script type="text/javascript">
-		$("#search-button").click(function(){
+		<script type="text/javascript">
+				$(".button-collapse").sideNav();
+				$('.carousel.carousel-slider').carousel({fullWidth: true});
+					$("#search-button").click(function(){
 						$("#navbar").hide();
 								$("#search-bar").show();
 								$("#search").focus();
@@ -101,6 +52,6 @@
 								$("#search-bar").hide();
 								$("#navbar").show();
 						});
-	</script>
-</body>
-</html>
+			</script>
+		</body>
+	</html>
