@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" type="text/css" href="./css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="./js/materialize.js"></script>
+</head>
+<body>
+   <nav id="navbar">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">KiDoyy</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#" id="search-button"><i class="material-icons">search</i></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="category.html">Category</a></li>
+          <li><a href="contact us.html">Contact Us</a></li>
+          <li><a href="Feedback.html">Feedback</a></li>
+          <li><a href="Login.html"><i class="material-icons">account_circle</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Category.html">Category</a></li>
+          <li><a href="Contact Us.html">Contact Us</a></li>
+          <li><a href="Feedback.html">Feedback</a></li>
+          <li><a href="Login.html"><i class="material-icons">account_circle</i>Sign In / Sign up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="search-bar" style="display:none">
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons" id="search-close">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Registration</h4>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 10px">
+  	<div class="row">
+            <form action="/doRegister" method="POST">
+                <div class="col s10 offset-s1">
+  			<div class="row">
+  				<div class="input-field col s6">
+		          <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="f_name">
+		          <label for="first_name">First Name</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="last_name" type="text" class="validate" name="l_name">
+		          <label for="last_name">Last Name</label>
+		        </div>
+  			</div>
+  			<div class="row">
+  				<div class="input-field col s12">
+		          <input id="email" type="email" class="validate" name="email">
+		          <label for="email">Email</label>
+		        </div>
+  			</div>
+  			<div class="row">
+		        <div class="input-field col s12">
+			           <input id="password" type="password" class="validate"name="pwd">
+			           <label for="password">Password</label>
+			    </div>
+			</div>
+			<div class="row">
+  				<div class="input-field col s12">
+		          <input  id="Address" type="text" class="validate"name="address">
+		          <label for="Address">Address</label>
+		        </div>
+		    </div>
+		    	<div class="container" style="margin-top: 20px">
+  	`					<div class="row">
+  							<div class="col s10 offset-s3">
+								<div style="margin-top: 10px">
+							    	<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+				    				<i class="material-icons right">send</i>
+				 					</button>
+ 				 					
+				    				<button class="btn waves-effect waves-light" type="reset" name="action">Reset
+	   								<i class="material-icons right">send</i>
+	  								</button>
+  								</div>
+  							</div>
+  						</div>
+  					</div>
+  			    </div>
+            </form>
+		    </div>	
+  		</div>
+  	</div>
+  </div>        
+</body>
+</html>

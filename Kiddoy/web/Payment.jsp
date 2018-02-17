@@ -1,72 +1,19 @@
+<%-- 
+    Document   : Payment
+    Created on : 16 Feb, 2018, 10:02:02 PM
+    Author     : DELL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-		</title>
-		<link rel="stylesheet" type="text/css" href="./css/materialize.css">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="./js/materialize.js"></script>
-	</head>
-	<body>
-		<nav id="navbar">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">KiDoyy</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#" id="search-button"><i class="material-icons">search</i></a></li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="category.html">Category</a></li>
-          <li><a href="contact us.html">Contact Us</a></li>
-          <li><a href="Feedback.html">Feedback</a></li>
-          <li><a href="Login.html"><i class="material-icons">account_circle</i></a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Category.html">Category</a></li>
-          <li><a href="Contact Us.html">Contact Us</a></li>
-          <li><a href="Feedback.html">Feedback</a></li>
-          <li><a href="Login.html"><i class="material-icons">account_circle</i>Sign In / Sign up</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="search-bar" style="display:none">
-      <div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons" id="search-close">close</i>
-          </div>
-        </form>
-      </div>
-    </nav>
-    <div class="container">
-
-		
-		</nav>
-		 <div class="container">
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h4>Payment</h4>
-        </div>
-      </div>
-		<div class="container" style="margin-top: 10px;">
-			<div class="row">
-				<div class="col s12 m12">
-					<div class="row">
-						<div class="col s12">
-							<ul class="tabs">
-								<li class="tab col s3"><a href="#test1">Credit card</a></li>
-								<li class="tab col s3"><a class="" href="#test2">Debit Card</a></li>
-								<li class="tab col s3 "><a href="#test3">Net Bankig</a></li>
-								<li class="tab col s3"><a href="#test4">Cash on Delivery</a></li>
-							</ul>
-						</div>
-						<div id="test1" class="col s12">
-							<div class="container">
-								<div class="row">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <form action="Topayment" method="post">
+            <div class="row">
 									<div class="col s12 m8">
 										<div class="input-field ">
 											<select>
@@ -218,10 +165,6 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-			$(document).ready(function() {
-		$('select').material_select();
-		});
-		</script>
-	</body>
+        </form>
+    </body>
 </html>

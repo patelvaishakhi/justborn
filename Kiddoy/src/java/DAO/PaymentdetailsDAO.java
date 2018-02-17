@@ -11,7 +11,7 @@ import model.Paymentdetails;
  * @author DELL
  */
 public interface PaymentdetailsDAO {
-    public void saveCategory (Paymentdetails paymentdetails);
+    public void savePaymentdetails (Paymentdetails paymentdetails);
     public List<Paymentdetails> showAllPaymentdetails();
     public void updatePaymentdetails (int id, String p_type,String c_id,String o_id,String p_status);
     public void deletePaymentdetails (Paymentdetails paymentdetails);

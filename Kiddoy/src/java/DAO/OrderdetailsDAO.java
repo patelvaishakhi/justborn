@@ -13,7 +13,7 @@ import model.Orderdetails;
  * @author DELL
  */
 public interface OrderdetailsDAO {
-    public void saveCategory (Orderdetails orderdetails);
+    public void saveOrderdetails (Orderdetails orderdetails);
     public List<Orderdetails> showAllOrderdetails();
     public void updateOrderdetails (int id, int pro_id, int c_id,Date O_date, String delivery_charges);
     public void deleteOrderdetails (Orderdetails orderdetails);
