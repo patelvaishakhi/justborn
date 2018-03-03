@@ -9,16 +9,16 @@ import java.io.Serializable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
 /**
  *
- * @author Kalpit Akhawat
+ * @author DELL
  */
-public class Admindetails implements Serializable
-{
-    
-     @Id @GeneratedValue
+public class category implements Serializable{
+    @Id @GeneratedValue
+            
     int id;
-     String password;
+    String name;
 
     public int getId() {
         return id;
@@ -28,11 +28,15 @@ public class Admindetails implements Serializable
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
     }
+    
+    
+    
 }
+

@@ -4,59 +4,60 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.categoryDAO;
+import DAO.product_feedbackDAO;
 import java.util.ArrayList;
 import java.util.List;
-import model.category;
+import model.product_feedback;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 /**
  *
  * @author DELL
  */
-public class CategoryDAOImp implements categoryDAO{
+public class product_feedbackDAOImp implements product_feedbackDAO{
+    @Override
     
-     @Override
-   public void saveCategory(category category)
+   public void saveproduct_feedback(product_feedback product_feedback)
    {
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(category);
+       session.save(product_feedback);
        transaction.commit();
        session.close();
        
    }
    
    @Override
-   public List<category> showCategory(){
-       List<category> categoryList = new ArrayList();
+   public List<product_feedback> showAllproduct_feedback(){
+       List<product_feedback> product_feedbackList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from category");
-       categoryList = query.list();
-       return categoryList;
+       Query query = session.createQuery("from product_feedback");
+       product_feedbackList = query.list();
+       return product_feedbackList;
    }
    
     @Override
-    public void updateCategory(int id, String name){
+    public void updateproduct_feedback (int id,int uid,int review_count,String message,String created_date){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       category category = (category)session.load(category.class,id);
-       category.setName(name);
-       session.update(category);
+       product_feedback product_feedback = (product_feedback)session.load(product_feedback.class,id);
+       product_feedback.setUid(uid);
+       product_feedback.setReview_count(review_count);
+       product_feedback.setMessage(message);
+       product_feedback.setCreated_date(created_date);
+       session.update(product_feedback);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deleteCategory(category category){
+  public void deleteproduct_feedback(product_feedback product_feedback){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(category);
+       session.delete(product_feedback);
        transaction.commit();
        session.close();
   }
-}
-
     
+}

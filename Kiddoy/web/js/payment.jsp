@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Payment
-    Created on : 16 Feb, 2018, 10:02:02 PM
+    Document   : payment
+    Created on : 3 Mar, 2018, 3:28:17 PM
     Author     : DELL
 --%>
 
@@ -12,9 +12,23 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="Topayment" method="post">
-            <div class="row">
-                                                                       	<div class="col s12 m8">
+        <form action="/do payment" method="post">
+        <div class="container" style="margin-top: 10px;">
+			<div class="row">
+				<div class="col s12 m12">
+					<div class="row">
+						<div class="col s12">
+							<ul class="tabs">
+								<li class="tab col s3"><a href="#test1">Credit card</a></li>
+								<li class="tab col s3"><a class="" href="#test2">Debit Card</a></li>
+								<li class="tab col s3 "><a href="#test3">Net Bankig</a></li>
+								<li class="tab col s3"><a href="#test4">Cash on Delivery</a></li>
+							</ul>
+						</div>
+						<div id="test1" class="col s12">
+							<div class="container">
+								<div class="row">
+									<div class="col s12 m8">
 										<div class="input-field ">
 											<select>
 												<option value="" disabled selected>Choose Card Type</option>
@@ -165,6 +179,6 @@
 				</div>
 			</div>
 		</div>
-        </form>
+</form>
     </body>
 </html>

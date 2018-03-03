@@ -4,59 +4,65 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.Feedback_detailsDAO;
+import DAO.offerDAO;
 import java.util.ArrayList;
 import java.util.List;
-import model.Feedback_details;
+import model.offer;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 
 /**
  *
  * @author DELL
  */
-public class Feedback_detailsDAOImp implements Feedback_detailsDAO{
-       @Override
-   public void saveFeedback_details(Feedback_details feedback_details)
+public class offerDAOImp implements offerDAO{
+    
+           @Override
+   public void saveOffer(offer offer)
    {
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(feedback_details);
+       session.save(offer);
        transaction.commit();
        session.close();
        
    }
    
    @Override
-   public List<Feedback_details> showAllFeedback_details(){
-       List<Feedback_details> Feedback_detailsList = new ArrayList();
+   public List<offer> showOffer(){
+       List<offer> offerList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from Feedback_details");
-       Feedback_detailsList = query.list();
-       return Feedback_detailsList;
+       Query query = session.createQuery("from Offer");
+       offerList = query.list();
+       return offerList;
    }
    
     @Override
-    public void updateFeedback_details(int feedback_id, int pro_id,int c_id){
+    public void updateOffer ( int id,int pid,int cid,String type,String description,int startdate,int enddate){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       Feedback_details feedback_details = (Feedback_details)session.load(Feedback_details.class,feedback_id);
-       feedback_details.setPro_id(pro_id);
-       feedback_details.setC_id(c_id);
-       session.update(feedback_details);
+       offer offer = (offer)session.load(offer.class,id);
+       offer.setPid(pid);
+       offer.setCid(cid);
+       offer.setType(type);
+       offer.setDecription(description);
+       offer.setStartdate(startdate);
+       offer.setEnddate(enddate);
+       
+       session.update(offer);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deleteFeedback_details(Feedback_details feedback_details){
+  public void deleteOffer(offer offer){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(feedback_details);
+       session.delete(offer);
        transaction.commit();
        session.close();
   }
-}
     
-
+}

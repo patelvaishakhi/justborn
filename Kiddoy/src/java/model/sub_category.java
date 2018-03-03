@@ -5,23 +5,20 @@
  */
 package model;
 
-
 import java.io.Serializable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
 /**
  *
- * @author Kalpit Akhawat
+ * @author DELL
  */
-public class Productdetails implements Serializable
-{
+public class sub_category  implements Serializable{
     @Id @GeneratedValue
+    
     int id;
-    String size;
-    String color;
-    String stock;
-    int Cat_id;
+    int cat_id;
     String name;
 
     public int getId() {
@@ -32,36 +29,12 @@ public class Productdetails implements Serializable
         this.id = id;
     }
 
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getStock() {
-        return stock;
-    }
-
-    public void setStock(String stock) {
-        this.stock = stock;
-    }
-
     public int getCat_id() {
-        return Cat_id;
+        return cat_id;
     }
 
-    public void setCat_id(int Cat_id) {
-        this.Cat_id = Cat_id;
+    public void setCat_id(int cat_id) {
+        this.cat_id = cat_id;
     }
 
     public String getName() {
@@ -71,4 +44,7 @@ public class Productdetails implements Serializable
     public void setName(String name) {
         this.name = name;
     }
+    
+    
+ 
 }

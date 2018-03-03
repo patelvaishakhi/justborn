@@ -4,11 +4,10 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.Add_to_cartDAO;
-import DAO.PaymentdetailsDAO;
+import DAO.sub_categoryDAO;
 import java.util.ArrayList;
 import java.util.List;
-import model.Add_to_cart;
+import model.sub_category;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,47 +15,45 @@ import org.hibernate.Transaction;
  *
  * @author DELL
  */
-public class Add_to_cartDAOImp implements Add_to_cartDAO{
-   @Override
-   public void saveAdd_to_cart(Add_to_cart add_to_cart)
+public class sub_categoryDAOImp implements sub_categoryDAO{
+    @Override
+   public void savesub_category(sub_category sub_category)
    {
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(add_to_cart);
+       session.save(sub_category);
        transaction.commit();
        session.close();
+       
    }
    
    @Override
-   public List<Add_to_cart> showAllAdd_to_cart(){
-       List<Add_to_cart> add_to_cartList = new ArrayList();
+   public List<sub_category> showAllsub_category(){
+       List<sub_category> categoryList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from Add_to_cart");
-       add_to_cartList = query.list();
-       return add_to_cartList;
+       Query query = session.createQuery("from sub_category");
+       categoryList = query.list();
+       return categoryList;
    }
    
     @Override
-    public void updateAdd_to_cart(int Add_to_cart_id, int Pro_id, int C_id){
+    public void updatesub_category(int id,int cat_id,String name){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       Add_to_cart add_to_cart = (Add_to_cart)session.load(Add_to_cart.class,Add_to_cart_id);
-       add_to_cart.setPro_id(Pro_id);
-       add_to_cart.setC_id(C_id);
-       session.update(add_to_cart);
+       sub_category sub_category = (sub_category)session.load(sub_category.class,id);
+       sub_category.setName(name);
+       sub_category.setCat_id(cat_id);
+       session.update(sub_category);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deleteAdd_to_cart(Add_to_cart add_to_cart){
+  public void deletesub_category(sub_category sub_category){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(add_to_cart);
+       session.delete(sub_category);
        transaction.commit();
        session.close();
   }
 }
-
- 
-

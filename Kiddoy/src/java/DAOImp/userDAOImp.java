@@ -4,66 +4,63 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.OrderdetailsDAO;
+
+import DAO.userDAO;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import model.Orderdetails;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-
+import model.user;
 /**
  *
  * @author DELL
  */
-public class OrderdetailsDAOImp implements OrderdetailsDAO{
-     @Override
-   public void saveOrderdetails(Orderdetails orderdetails)
+public class userDAOImp implements userDAO{
+   
+   @Override
+  
+   public void saveUser(user usr)
    {
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(orderdetails);
+       session.save(usr);
        transaction.commit();
        session.close();
-       
    }
-   
+     
    @Override
-   public List<Orderdetails> showAllOrderdetails(){
-       List<Orderdetails> OrderdetailsList = new ArrayList();
+   public List<user> showAllUser(){
+       List<user> userList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from Orderdetails");
-       OrderdetailsList = query.list();
-       return OrderdetailsList;
+       Query query = session.createQuery("from user");
+       userList = query.list();
+       return userList;
    }
    
     @Override
-    public void updateOrderdetails(int id, int pro_id, int c_id,Date O_date, String delivery_charges){
+     public void updateUser (int id, String name, String password, String contact, String email, String address){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       Orderdetails orderdetails = (Orderdetails)session.load(Orderdetails.class,id);
-       orderdetails.setPro_id(pro_id);
-       orderdetails.setC_id(c_id);
-       orderdetails.setO_date(O_date);
-       orderdetails.setDelivery_charges(delivery_charges);
-       session.update(orderdetails);
+       user usr = (user)session.load(user.class,id);
+       usr.setName(name);
+       usr.setPassword(password);
+       usr.setContact(contact);
+       usr.setEmail(email);
+       usr.setAddress(address);
+      
+       session.update(usr);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deleteOrderdetails(Orderdetails orderdetails){
+  public void deleteUser (user user){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(orderdetails);
+       session.delete(user);
        transaction.commit();
        session.close();
   }
+   
 }
-
-
-
-    
-

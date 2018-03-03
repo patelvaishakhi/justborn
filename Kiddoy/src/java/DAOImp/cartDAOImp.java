@@ -4,65 +4,57 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.PaymentdetailsDAO;
+import DAO.cartDAO;
 import java.util.ArrayList;
 import java.util.List;
-import model.Paymentdetails;
+import model.cart;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-
 /**
  *
  * @author DELL
  */
-public class PaymentdetailsDAOImp implements PaymentdetailsDAO{
+public class cartDAOImp implements cartDAO{
     
-     @Override
-   public void savePaymentdetails(Paymentdetails paymentdetails)
-   {
+   @Override
+   
+   public void savecart (cart cat){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(paymentdetails);
+       session.save(cat);
        transaction.commit();
        session.close();
-       
    }
    
    @Override
-   public List<Paymentdetails> showAllPaymentdetails(){
-       List<Paymentdetails> paymentdetailsList = new ArrayList();
+   public List<cart> showAllcart(){
+       List<cart> cartList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from Paymentdetails");
-       paymentdetailsList = query.list();
-       return paymentdetailsList;
+       Query query = session.createQuery("from cart");
+       cartList = query.list();
+       return cartList;
    }
    
     @Override
-    public void updatePaymentdetails(int id, String p_type,String c_id,String o_id,String p_status){
+      public void updatecart (int id,int uid,int description){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       Paymentdetails paymentdetails = (Paymentdetails)session.load(Paymentdetails.class,id);
-       paymentdetails.setP_type(p_type);
-       paymentdetails.setC_id(c_id);
-       paymentdetails.setO_id(o_id);
-       paymentdetails.setP_status(p_status);
-       session.update(paymentdetails);
+       cart cat = (cart)session.load(cart.class,id);
+      // cart.setDescription(description);
+       cat.setUid(uid);
+       
+       session.update(cat);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deletePaymentdetails(Paymentdetails paymentdetails){
+  public void deletecart(cart cat){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(paymentdetails);
+       session.delete(cat);
        transaction.commit();
        session.close();
-  }
+  } 
 }
-
-
-
-

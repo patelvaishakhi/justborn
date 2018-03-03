@@ -53,12 +53,12 @@
 		     <div class="row">
 		        <div class="input-field col s12">
 		          <i class="material-icons prefix">account_circle</i>
-		          <input id="icon_prefix" type="text" class="validate"name="emailaddress">
+		          <input id="icon_prefix" type="text" class="validate" name="emailaddress">
 		          <label for="icon_prefix">Email Address</label>
 		        </div>
 		        <div class="input-field col s12">
 		          <i class="material-icons prefix">phone</i>
-		          <input id="icon_telephone" type="tel" class="validate"name="mobileno">
+		          <input id="icon_telephone" type="tel" class="validate" name="mobileno">
 		          <label for="icon_telephone">Mobile No</label>
 		        </div>
 		        <div class="input-field col s12">
@@ -68,7 +68,7 @@
 		        </div>
 		        <div class="input-field col s12">
 		          <i class="material-icons prefix">message</i>
-		          <textarea id="textarea1" class="materialize-textarea"></textarea>
+                          <textarea id="textarea1" class="materialize-textarea" name="message"></textarea>
 				  <label for="textarea1">Message</label>
 				</div>
 		          

@@ -4,59 +4,64 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.categoryDAO;
+import DAO.feedbackDAO;
 import java.util.ArrayList;
 import java.util.List;
-import model.category;
+import model.feedback;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 /**
  *
  * @author DELL
  */
-public class CategoryDAOImp implements categoryDAO{
+public class feedbackDAOImp implements feedbackDAO{
     
-     @Override
-   public void saveCategory(category category)
+    @Override
+    
+   public void saveFeedback(feedback feedback)
    {
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(category);
+       session.save(feedback);
        transaction.commit();
        session.close();
        
    }
    
    @Override
-   public List<category> showCategory(){
-       List<category> categoryList = new ArrayList();
+   public List<feedback> showAllFeedback(){
+       List<feedback> feedbackList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from category");
-       categoryList = query.list();
-       return categoryList;
+       Query query = session.createQuery("from feedback");
+       feedbackList = query.list();
+       return feedbackList;
    }
    
     @Override
-    public void updateCategory(int id, String name){
+    public void updateFeedback (int id,String name,String email,int contact,String subject,String message,int created_at){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       category category = (category)session.load(category.class,id);
-       category.setName(name);
-       session.update(category);
+       feedback feedback = (feedback)session.load(feedback.class,id);
+       feedback.setName(name);
+       feedback.setEmail(email);
+       feedback.setContact(contact);
+      feedback.setCreated_at(created_at);
+       feedback.setSubject(subject);
+       feedback.setMessage(message);
+       
+       session.update(feedback);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deleteCategory(category category){
+  public void deleteFeedback(feedback feedback){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(category);
+       session.delete(feedback);
        transaction.commit();
        session.close();
   }
-}
-
     
+}

@@ -5,17 +5,17 @@
  */
 package DAO;
 import java.util.List;
-import model.Category;
+import model.category;
+
 /**
  *
  * @author DELL
  */
-public interface CategoryDAO {
-    public void saveCategory (Category category);
-    public List<Category> showAllCategory();
-    public void updateCategory (int id,String name);
-    public void deleteCategory (Category category);
-    
+public interface categoryDAO {
+         public void saveCategory (category category);
+    public List<category> showCategory();
+    public void updateCategory (int id, String name);
+    public void deleteCategory (category category);
     
     
 }

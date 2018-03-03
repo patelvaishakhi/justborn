@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package DAOImp;
-import DAO.AdmindetailsDAO;
+import DAO.paymentDAO;
+import DAO.paymentDAO;
 import java.util.ArrayList;
 import java.util.List;
-import model.Admindetails;
+import model.payment;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,47 +17,49 @@ import org.hibernate.Transaction;
  *
  * @author DELL
  */
-public class AdmindetailsDAOImp implements AdmindetailsDAO{
-    
-   @Override
-   public void saveAdmindetails(Admindetails admindetails)
+public class paymentDAOImp implements paymentDAO{
+    @Override
+   public void savepayment(payment payment)
    {
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.save(admindetails);
+       session.save(payment);
        transaction.commit();
        session.close();
        
    }
    
    @Override
-   public List<Admindetails> showAdmindetails(){
-       List<Admindetails> admindetailsList = new ArrayList();
+   public List<payment> showAllpayment(){
+       List<payment> paymentList = new ArrayList();
        Session session = HibernateUtil.getSessionFactory().openSession();
-       Query query = session.createQuery("from Admindetails");
-       admindetailsList = query.list();
-       return admindetailsList;
+       Query query = session.createQuery("from Payment");
+       paymentList = query.list();
+       return paymentList;
    }
    
     @Override
-    public void updateAdmindetails(int id, String password){
+    public void updatepayment(int id ,int oid ,int uid,int type,String status,int transaction_id){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       Admindetails admindetails = (Admindetails)session.load(Admindetails.class,id);
-       admindetails.setPassword(password);
-       session.update(admindetails);
+       payment payment = (payment)session.load(payment.class,id);
+       payment.setOid(oid);
+       payment.setUid(uid);
+       payment.setType(type);
+       payment.setStatus(status);
+       payment.setTransaction_id(transaction_id);
+       session.update(payment);
        transaction.commit();
        session.close();
        
  }
   @Override
-  public void deleteAdmindetails(Admindetails admindetails){
+  public void deletepayment(payment payment){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
-       session.delete(admindetails);
+       session.delete(payment);
        transaction.commit();
        session.close();
   }
+    
 }
-
-
