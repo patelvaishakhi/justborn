@@ -12,17 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="/dologin" method="POST"> <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <h4>Login</h4>
-        </div>
-      </div>
+        <form action="/do login" method="POST">
+            
             <div class="row container " style="margin-top: 10px;">
               <div class="col m6 offset-m3">
                 <div class="input-field">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" type="text" class="validate">
+                  <input id="icon_prefix" type="text" class="validate" name="username">
                   <label for="icon_prefix">user name/email</label>
                 </div>
               </div>
@@ -32,7 +28,7 @@
                 <div class="col m6 offset-m3">
                   <div class="input-field">
                     <i class="material-icons prefix">lock</i>
-                    <input id="icon_prefix" type="password" class="validate">
+                    <input id="icon_prefix" type="password" class="validate" name="pwd">
                     <label for="icon_prefix">password</label>
                   </div>
                   <button class="btn waves-effect waves-light" type="submit" name="action">login
@@ -40,6 +36,7 @@
                   </button>
                   <a href="#" class="right">forgot password?</a>
                   
-                </div></form>
+                </div>
+        </form>
     </body>
 </html>

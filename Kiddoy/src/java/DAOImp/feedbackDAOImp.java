@@ -39,7 +39,7 @@ public class feedbackDAOImp implements feedbackDAO{
    }
    
     @Override
-    public void updateFeedback (int id,String name,String email,int contact,String subject,String message,int created_at){
+     public void updateFeedback (int id,String name,String email,int contact,int subject,int message,int created_at){
        Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
        feedback feedback = (feedback)session.load(feedback.class,id);
@@ -56,7 +56,7 @@ public class feedbackDAOImp implements feedbackDAO{
        
  }
   @Override
-  public void deleteFeedback(feedback feedback){
+   public void deletFeedback (feedback feedback){
     Session session = HibernateUtil.getSessionFactory().openSession();
        Transaction transaction = session.beginTransaction();
        session.delete(feedback);

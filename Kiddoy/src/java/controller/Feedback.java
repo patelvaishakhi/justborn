@@ -5,15 +5,19 @@
  */
 package controller;
 
-import DAOImp.Feedback_detailsDAOImp;
+import DAOImp.feedbackDAOImp;
+import DAO.feedbackDAO;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Feedback_details;
+import model.feedback;
 
 /**
  *
@@ -74,8 +78,18 @@ public class Feedback extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Feedback_details fd = new Feedback_details();
-        Feedback_detailsDAOImp fdi = new Feedback_detailsDAOImp();
+       if(request.getParameter("add feedback")!=null){
+           String F_name=request.getParameter(F_name);
+           String email=request.getParameter(email);
+           String msg=request.getParameter(msg);
+           feedback.setF_name(F_name);
+           feedback.setemail(email);
+           feedback.setmsg(msg);
+           RequestDispatcher rd= request.getRequestDispatcher("Feedback.jsp");
+           rd.forward(request, response);
+           
+           
+       }
        
     }
 

@@ -39,7 +39,7 @@ public class user implements Serializable{
         this.name = name;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -47,7 +47,7 @@ public class user implements Serializable{
         this.password = password;
     }
 
-    public int getContact() {
+    public String getContact() {
         return contact;
     }
 
@@ -71,8 +71,5 @@ public class user implements Serializable{
         this.address = address;
     }
 
-   
-    
-    
-    
-}
+  
+ }

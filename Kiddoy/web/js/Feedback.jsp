@@ -12,8 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <forma ction="/doFeedback" method="POST" >
-        <h1>Hello World!</h1>
+        <forma action="/do Feedback" method="POST" >
         <div class="container">
 							
 							<div class="row">
